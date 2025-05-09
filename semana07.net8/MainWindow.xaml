@@ -1,0 +1,35 @@
+﻿<Window x:Class="semana07.net8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Buscar Productos" Height="500" Width="700">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Buscar producto -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <TextBox x:Name="txtBuscar" Width="300" Height="30" Margin="0,0,10,0"/>
+            <Button Content="Buscar" Width="100" Click="BtnBuscar_Click"/>
+        </StackPanel>
+
+        <!-- Insertar nuevo producto -->
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,0,0,10">
+            <TextBlock Text="Nombre del producto" />
+            <TextBox x:Name="txtNombre" Margin="0,5"/>
+
+            <TextBlock Text="Precio" />
+            <TextBox x:Name="txtPrecio" Margin="0,5"/>
+
+            <TextBlock Text="Stock" />
+            <TextBox x:Name="txtStock" Margin="0,5"/>
+
+            <Button Content="Guardar producto" Click="BtnGuardar_Click" Width="150" Margin="0,10"/>
+        </StackPanel>
+
+        <!-- Resultados -->
+        <DataGrid x:Name="dgProductos" Grid.Row="2" AutoGenerateColumns="True" Margin="0,10,0,0"/>
+    </Grid>
+</Window>
